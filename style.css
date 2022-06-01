@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    /* grid-template-rows: 1fr 5fr; */
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    /* min-width: 700px; */
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: hsl(201,78%,46%);
+    color: white;
+    padding: 20px;
+}
+
+.logo-container, .sidebar ul li{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.settings {
+    margin-top: 60px;
+}
+
+.header {
+    grid-area: header;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.upper-header, .lower-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+.lower-header {
+    align-self: center;
+}
+
+.searchbar {
+    display: flex;
+    width: 65%;
+}
+
+.searchbar input {
+    width: 100%;
+    
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsl(212,28%,91%);
+}
+
+.login-container {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    /* https://stackoverflow.com/questions/4652654/how-to-turn-off-word-wrapping-in-html */
+}
+
+.login-container .user-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.welcome-message-container {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+.welcome-message {    
+    font-weight: 600;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.welcome-container .user-avi {
+    background-image: url('https://source.unsplash.com/3TLl_97HNJo');
+    /* background-size: contain; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* first value is X axis. second Y. */
+    /* width: 50%; */
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+}
+
+.action-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+button {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-size: 10px;    
+}
+
+.main {
+    grid-area: main;
+    background-color: hsl(212,28%,91%);
+    
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "projects announcements"
+        "projects trending";
+    gap: 20px;
+    padding: 20px;
+}
+
+.projects h1 {
+    
+    /* width: 100%; */
+}
+
+.projects-container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* https://gridbyexample.com/examples/example28/  */
+    grid-template-columns: repeat(auto-fill, minmax(auto, 250px));
+    grid-auto-rows: auto;
+    gap: 20px;
+    grid-auto-flow: row;    
+}
+
+.projects .card {
+    /* max-width: 200px; */
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+
+.trending {
+    grid-area: trending;
+}
+
+.card, .announcements-container, .trending-container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(175, 175, 175);
+    padding: 10px;
+}
+
+.card {
+    border-left: 3px solid hsl(41,86%,55%);
+    display: grid;
+    gap: 10px;
+    align-content: space-between;
+    
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.announcements-container {
+    padding: 20px;
+}
+
+.message-middle {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.message {
+    padding: 10px 0px;
+}
+
+.trending-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.trending-card .user-avi {
+    /* background-size: contain; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* first value is X axis. second Y. */
+    /* width: 50%; */
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.billgates {
+    background-image: url('https://source.unsplash.com/rDEOVtE7vOs');
+}
+
+.elonmusk {
+    background-image: url('https://source.unsplash.com/IF9TK5Uy-KI');
+}
+
+.stevejobs {
+    background-image: url('https://source.unsplash.com/XQWfro4LrVs');
+}
+
+.jeffbezos {
+    background-image: url('https://source.unsplash.com/ff5K3-kYPHA');
+}
+
+.trending-user-info {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
